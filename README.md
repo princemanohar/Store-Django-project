@@ -1,6 +1,52 @@
-#**
+# Store Reviews Service
 
-This project contains rest APIs built using Django.
+This project is a Restfull Application built using Django which contains data related to Stores, their Reviews, Product details and their availability in the Stores.
+
+## DB Design
+
+### Table Name: Store
+
+| Field          | Type         | Null     | Key         | Default | Extra |
+|----------------|--------------|----------|-------------|---------|-------|
+| store_id       | integer      | NOT NULL | Primary Key |         |       |
+| store_name     | varchar(200) | NOT NULL |             |         |       |
+| store_owner    | varchar(200) |          |             |         |       |
+| location       | text         |          |             |         |       |
+| established_on | Date Time    | NULL     |             |         |       |
+| gst_in         | varchar(200) |          |             |         |       |
+
+
+###Table Name: Reviews
+
+| Field      | Type    | Null     | Key                | Default | Extra |
+|------------|---------|----------|--------------------|---------|-------|
+| review_id  | integer | NOT NULL | Primary Key        |         |       |
+| store_id   | integer | NOT NULL | Foreign Key(Store) |         |       |
+| review     | text    |          |                    |         |       |
+| stars      | integer |          |                    |         |       |
+| created_at |         |          |                    | NOW     |       |
+| updated_at |         |          |                    | NOW     |       |
+
+### Table Name: Entities
+
+| Field       | Type         | Null     | Key         | Default | Extra |
+|-------------|--------------|----------|-------------|---------|-------|
+| entity_id   | integer      | NOT NULL | Primary Key |         |       |
+| entity_name | varchar(200) |          |             |         |       |
+| price       | Float        |          |             |         |       |
+| created_at  |              |          |             | NOW     |       |
+| updated_at  |              |          |             | NOW     |       |
+
+### Table Name: Inventories
+
+| Field        | Type    | Null     | Key                   | Default | Extra |
+|--------------|---------|----------|-----------------------|---------|-------|
+| inventory_id | integer | NOT NULL | Primary Key           |         |       |
+| store_id     | integer | NOT NULL | Foreign Key(Store)    |         |       |
+| entity_id    | integer | NOT NULL | Foreign Key(Entities) |         |       |
+| count        | integer |          |                       |         |       |
+| created_at   |         |          |                       | NOW     |       |
+| updated_at   |         |          |                       | NOW     |       |
 
 
 
