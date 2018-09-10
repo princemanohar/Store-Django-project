@@ -48,7 +48,22 @@ This project is a Restfull Application built using Django which contains data re
 | created_at   |         |          |                       | NOW     |       |
 | updated_at   |         |          |                       | NOW     |       |
 
+## Instructions to Build and Run
 
+### Requirements:-
+- Python 3+
+- pip
+
+### Instructions:-
+1. git clone http://gitlab.networthcorp.net/prince0909/store-django-project.git
+2. cd  store-django-project
+3. pip install -r 
+4. python manage.py migrate
+5. python manage.py runserver
+
+This starts the application on port `8000`.
+
+You can go to `http://localhost:8000` on your browser to see the home page. 
 
 For API Documentation, you can refer to:-
 https://www.getpostman.com/collections/2c6e7f6268f2c62b6ea4
