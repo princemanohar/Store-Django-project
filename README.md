@@ -65,5 +65,6 @@ This starts the application on port `8000`.
 
 You can go to `http://localhost:8000` on your browser to see the home page. 
 
-For API Documentation, you can refer to:-
-https://www.getpostman.com/collections/2c6e7f6268f2c62b6ea4
+## API Documentation:-
+
+you can refer to [Postman Collection here](https://www.getpostman.com/collections/2c6e7f6268f2c62b6ea4).
