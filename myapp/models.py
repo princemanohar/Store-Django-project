@@ -48,7 +48,7 @@ class Entities(models.Model):
 class Inventories(models.Model):
     inventory_id = models.AutoField(primary_key=True)
     store_id = models.ForeignKey('Store', on_delete=models.CASCADE, null = False)
-    entity_id = models.ForeignKey(Entities, on_delete=models.CASCADE, null = False)
+    entity_id = models.ForeignKey('Entities', on_delete=models.CASCADE, null = False)
     count = models.IntegerField()
     created_at = models.DateTimeField(
         default=timezone.now)
