@@ -109,3 +109,54 @@ class ReviewView(View):
         print("createResp: %d " % createResp.review_id)
 
         return JsonResponse(createResp.review_id, safe=False)
+
+
+''''
+This class will contains the logic to handle date of Entities model.
+'''
+
+class EntitiesView(View):
+    def get(self, request, *args, **kwargs):
+        allEntities = Entities.objects.all()
+        data = serializers.serialize('json', allEntities)
+        data = json.loads(data)
+
+        final_data = []
+        for data1 in data:
+            final_data.append(data1['fields'])
+
+        return JsonResponse(final_data, safe=False)
+
+    '''
+            Create a Entities entry
+        '''
+
+    def post(self, request, *args, **kwargs):
+        print("POST Data : %s:" % request.POST)
+        print("Body : %s:" % request.body)
+        # Converting body to json object
+        body = json.loads(request.body)
+        createResp = Entities.objects.create(
+            **body
+        )
+        print("createResp: %d " % createResp.entity_id)
+        print(body)
+        return JsonResponse(createResp.entity_id, safe=False)
+
+
+
+''''
+This class will contains the logic to handle date of Entities model.
+'''
+
+class InventoriesView(View):
+    def get(self, request, *args, **kwargs):
+        allInventories = Inventories.objects.all()
+        data = serializers.serialize('json', allInventories)
+        data = json.loads(data)
+
+        final_data = []
+        for data1 in data:
+            final_data.append(data1['fields'])
+
+        return JsonResponse(final_data, safe=False)
