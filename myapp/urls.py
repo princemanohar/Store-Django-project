@@ -11,7 +11,7 @@ urlpatterns = [
     url(r'^reviews', ReviewView.as_view(), name='review'),
     url(r'^entities', EntitiesView.as_view(), name='entity'),
     url(r'^inventories', InventoriesView.as_view(), name='inventory'),
-    url('', views.stores_list, name='stores_list'),
+    #url('', views.stores_list, name='stores_list'),
 
 
 ]

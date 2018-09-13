@@ -35,7 +35,7 @@ class Reviews(models.Model):
 class Entities(models.Model):
     entity_id = models.AutoField(primary_key=True)
     entity_name = models.CharField(max_length=200)
-    price = models.IntegerField()
+    price = models.FloatField()
     created_at = models.DateTimeField(
         default=timezone.now)
     updated_at = models.DateTimeField(

@@ -160,3 +160,4 @@ class InventoriesView(View):
             final_data.append(data1['fields'])
 
         return JsonResponse(final_data, safe=False)
+
