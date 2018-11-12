@@ -59,7 +59,8 @@ This project is a Restfull Application built using Django which contains data re
 2. cd  store-django-project
 3. pip install -r 
 4. python manage.py migrate
-5. python manage.py runserver
+5. python manage.py createsuperuser(For creating username and password)
+6. python manage.py runserver
 
 This starts the application on port `8000`.
 
